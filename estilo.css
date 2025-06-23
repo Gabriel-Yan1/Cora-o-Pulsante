@@ -1,0 +1,102 @@
+body {
+  background: radial-gradient(circle, #1e1e1e, #000);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.progress-bar-container {
+  width: 300px;
+  height: 15px;
+  background: #333;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 5px;
+  box-shadow: 0 0 5px #900;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #e63946, #d62828);
+  transition: width 0.4s ease;
+  border-radius: 8px 0 0 8px;
+}
+
+.love-message {
+  color: #e63946;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  user-select: none;
+  pointer-events: none;
+}
+
+.love-message.show {
+  opacity: 1;
+}
+
+svg {
+  width: 250px;
+  height: 250px;
+  overflow: visible;
+}
+
+.heart-part {
+  fill: #ff0015;
+  filter: drop-shadow(0 0 10px rgba(230, 57, 70, 0.8));
+  transform-origin: center bottom;
+  transition: transform 0.3s ease;
+}
+
+/* Pulsar batimento */
+.pulsing {
+  animation: pulse 1s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    fill: #e63946;
+    filter: drop-shadow(0 0 10px rgba(230, 57, 70, 0.8));
+  }
+  50% {
+    transform: scale(1.15);
+    fill: #d62828;
+    filter: drop-shadow(0 0 25px rgba(214, 40, 40, 1));
+  }
+}
+
+.buttons {
+  margin-top: 70px;
+  display: flex;
+  gap: 50px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: linear-gradient(45deg, #e63946, #9d0208);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(230, 57, 70, 0.6);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  box-shadow: 0 8px 20px rgba(230, 57, 70, 0.9);
+  transform: scale(1.05);
+}
+
+#stop {
+  background: linear-gradient(45deg, #6a0000, #330000);
+}
